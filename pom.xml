@@ -6,7 +6,7 @@
 
   <groupId>com.uid2</groupId>
   <artifactId>uid2-attestation-api</artifactId>
-  <version>1.3.4-SNAPSHOT</version>
+  <version>1.4.0-e5df2e10aa</version>
 
   <name>${project.groupId}:${project.artifactId}</name>
   <description>Interfaces for enclave attestation process</description>
