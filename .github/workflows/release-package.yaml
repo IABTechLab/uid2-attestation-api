@@ -12,7 +12,7 @@ on:
         - Snapshot
       publish_to_maven:
         description: 'True to publish the artifacts to maven repository, false to skip the step'
-        default: true
+        default: false
         required: false
         type: boolean
 jobs:
