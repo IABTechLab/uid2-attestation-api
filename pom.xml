@@ -6,7 +6,7 @@
 
   <groupId>com.uid2</groupId>
   <artifactId>uid2-attestation-api</artifactId>
-  <version>1.5.10-f007089dd7-tjm-UID2-2324-new-shared-java-package-pipeline</version>
+  <version>1.5.11-661dd79d99-tjm-UID2-2324-new-shared-java-package-pipeline</version>
 
   <name>${project.groupId}:${project.artifactId}</name>
   <description>Interfaces for enclave attestation process</description>
