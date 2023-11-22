@@ -1,5 +1,5 @@
 name: Release Package
-run-name: ${{ format('{0}',  inputs.release_type == 'Snapshot' && 'Publish pre-release' || 'Release')}} Package by @${{ github.actor }}  
+run-name: ${{ format('{0}',  inputs.release_type == 'Snapshot' && 'Publish pre-release' || format('Release {0}', inputs.release_type))}} Package by @${{ github.actor }}  
 on:
   workflow_dispatch:
     inputs:
