@@ -1,6 +1,6 @@
 @echo off
 
-set VERSION="2.0.0-SNAPSHOT"
+set VERSION="2.0.0"
 set GROUP_ID="com.uid2"
 set ARTIFACT_ID="uid2-attestation-api"
 
