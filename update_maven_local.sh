@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=${1:-"1.0.0"}
+VERSION=${1:-"2.0.0"}
 GROUP_ID="com.uid2"
 ARTIFACT_ID="uid2-attestation-api"
 

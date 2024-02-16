@@ -7,5 +7,5 @@ public interface IAttestationProvider {
      */
     default boolean isReady() { return true; }
 
-    byte[] getAttestationRequest(byte[] publicKey) throws AttestationException;
+    byte[] getAttestationRequest(byte[] publicKey, byte[] userData) throws AttestationException;
 }
