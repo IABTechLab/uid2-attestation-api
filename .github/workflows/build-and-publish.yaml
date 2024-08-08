@@ -7,10 +7,17 @@ on:
         type: choice
         description: 'The type of release'
         options:
-        - Major
-        - Minor
-        - Patch
         - Snapshot
+        - Patch
+        - Minor
+        - Major
+      vulnerability_failure_severity:
+        description: The severity to fail the workflow if such vulnerability is detected. DO NOT override it unless a Jira ticket is raised.
+        type: choice
+        options:
+        - CRITICAL,HIGH
+        - CRITICAL,HIGH,MEDIUM
+        - CRITICAL (DO NOT use if JIRA ticket not raised)
       publish_to_maven:
         description: 'True to publish the artifacts to Maven repository, false to skip the step'
         default: false
@@ -26,10 +33,11 @@ on:
 jobs:
   build-and-pubish:
     name: Build and publish JAR packages to Maven repository
-    uses: IABTechLab/uid2-shared-actions/.github/workflows/shared-java-publish-versioned-package.yaml@v2
+    uses: IABTechLab/uid2-shared-actions/.github/workflows/shared-publish-to-maven-versioned.yaml@v2
     with:
       release_type: ${{ inputs.release_type }}
       publish_to_maven: ${{ inputs.publish_to_maven }}
       java_version: ${{ inputs.java_version }}
       publish_vulnerabilities: ${{ inputs.publish_vulnerabilities }}
+      vulnerability_failure_severity: ${{ inputs.vulnerability_failure_severity }}
     secrets: inherit
