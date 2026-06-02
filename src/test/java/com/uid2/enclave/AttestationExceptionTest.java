@@ -16,5 +16,6 @@ public class AttestationExceptionTest {
         Throwable cause = new RuntimeException("root");
         AttestationException e = new AttestationException(cause);
         assertSame(cause, e.getCause());
+        assertNotNull(e.getMessage());
     }
 }
