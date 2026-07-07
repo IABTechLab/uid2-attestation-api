@@ -1,0 +1,19 @@
+# Roll out to each in-scope IABTechLab uid2* repo as .github/workflows/check-jira-key.yaml
+# once uid2-shared-actions #254 is merged AND a release has moved the v3 tag to include
+# actions/check_jira_key. Non-blocking until the terraform required_status_checks rule is flipped on.
+name: Check Jira Key
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  # Job name PINNED to `check_jira_key` so every repo produces the same status-check context
+  # ("check_jira_key") — one terraform required_status_checks entry matches all repos (UID2-7426).
+  check_jira_key:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: IABTechLab/uid2-shared-actions/actions/check_jira_key@v3
